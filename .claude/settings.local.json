@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:roasmargins.com)",
+      "Bash(git -C \"/c/Users/John/source/repos/jfreal/etsyroas\" log --oneline)",
+      "WebFetch(domain:www.etsy.com)",
+      "WebFetch(domain:help.etsy.com)",
+      "WebFetch(domain:www.printful.com)",
+      "WebFetch(domain:craftybase.com)",
+      "Bash(npm create:*)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vue-tsc:*)",
+      "Bash(npx vite build:*)"
+    ]
+  }
+}

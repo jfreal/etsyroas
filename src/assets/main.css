@@ -1,0 +1,80 @@
+:root {
+  --bg-page: #faf8f6;
+  --bg-card: #ffffff;
+  --bg-subtle: #f5f0ec;
+  --border: #e8ddd4;
+  --text-primary: #2d2419;
+  --text-secondary: #6b5c4f;
+  --text-muted: #a0927f;
+  --accent: #d35400;
+  --accent-soft: #e8875a;
+  --accent-light: rgba(211, 84, 0, 0.08);
+  --accent-border: rgba(211, 84, 0, 0.2);
+
+  --green-bg: #e6f5ec;
+  --green-text: #1a7a3a;
+  --red-bg: #fde8e8;
+  --red-text: #b91c1c;
+  --yellow-bg: #fef5dc;
+  --yellow-text: #8a6100;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--accent-border);
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.app-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.calculator-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 680px) {
+  .calculator-layout {
+    grid-template-columns: 340px 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.results-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
