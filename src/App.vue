@@ -5,6 +5,7 @@ import VerdictBanner from './components/VerdictBanner.vue'
 import BreakdownTable from './components/BreakdownTable.vue'
 import BreakEvenDisplay from './components/BreakEvenDisplay.vue'
 import HourlyRate from './components/HourlyRate.vue'
+import Explainer from './components/Explainer.vue'
 
 const calc = useCalculator()
 </script>
@@ -72,5 +73,7 @@ const calc = useCalculator()
         />
       </div>
     </div>
+
+    <Explainer />
   </div>
 </template>
