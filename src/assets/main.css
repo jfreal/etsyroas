@@ -16,12 +16,12 @@
   --text-secondary: #6e6e73;
   --text-muted: #86868b;
 
-  /* Accent (Etsy orange, refined for a clean base) */
-  --accent: #ef5a1e;
-  --accent-hover: #d64e16;
-  --accent-soft: #ff8a5c;
-  --accent-light: rgba(239, 90, 30, 0.1);
-  --accent-border: rgba(239, 90, 30, 0.35);
+  /* Accent (Apple system blue) */
+  --accent: #0071e3;
+  --accent-hover: #0062c4;
+  --accent-soft: #4aa3ff;
+  --accent-light: rgba(0, 113, 227, 0.1);
+  --accent-border: rgba(0, 113, 227, 0.35);
 
   /* Status (Apple system colors, softened) */
   --green-bg: #e9f8ee;
@@ -51,11 +51,11 @@
   --text-secondary: #aeaeb2;
   --text-muted: #8e8e93;
 
-  --accent: #ff7a45;
-  --accent-hover: #ff8c5c;
-  --accent-soft: #ff8a5c;
-  --accent-light: rgba(255, 122, 69, 0.16);
-  --accent-border: rgba(255, 122, 69, 0.4);
+  --accent: #0a84ff;
+  --accent-hover: #409cff;
+  --accent-soft: #4aa3ff;
+  --accent-light: rgba(10, 132, 255, 0.16);
+  --accent-border: rgba(10, 132, 255, 0.4);
 
   --green-bg: #11331f;
   --green-text: #5fd58a;
