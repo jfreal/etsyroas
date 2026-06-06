@@ -42,31 +42,33 @@ const inputId = useId()
 
 .input-label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-secondary);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.32rem;
 }
 
 .input-wrapper {
   display: flex;
   align-items: center;
-  border: 1px solid var(--border);
-  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color 0.15s;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .input-wrapper:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-light);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .input-adornment {
-  padding: 0.5rem 0.6rem;
-  background: var(--bg-subtle);
-  color: var(--text-secondary);
-  font-size: 0.85rem;
+  padding: 0.5rem 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
   user-select: none;
 }
 
@@ -74,19 +76,19 @@ const inputId = useId()
   flex: 1;
   border: none;
   outline: none;
-  padding: 0.5rem 0.6rem;
+  padding: 0.55rem 0.7rem;
   font-size: 0.95rem;
   min-width: 0;
-  background: var(--bg-card);
+  background: transparent;
   color: var(--text-primary);
 }
 
 .input-field.has-prefix {
-  padding-left: 0.4rem;
+  padding-left: 0.2rem;
 }
 
 .input-field.has-suffix {
-  padding-right: 0.4rem;
+  padding-right: 0.2rem;
 }
 
 /* Hide number spinner */

@@ -51,11 +51,17 @@ const emit = defineEmits<{ reset: [] }>()
 
     <div class="section">
       <div class="offsite-toggle">
-        <label class="checkbox-label">
-          <input type="checkbox" v-model="offsiteAdsEnabled" />
-          <span>Sale came from Offsite Ad</span>
+        <label class="switch-label">
+          <span class="switch-text">
+            <span class="switch-title">Sale came from Offsite Ad</span>
+            <span class="switch-hint">Etsy charges an extra fee on Offsite Ad sales</span>
+          </span>
+          <span class="switch">
+            <input type="checkbox" v-model="offsiteAdsEnabled" />
+            <span class="switch-track"></span>
+            <span class="switch-thumb"></span>
+          </span>
         </label>
-        <span class="offsite-hint">Etsy charges an extra fee on Offsite Ad sales</span>
       </div>
 
       <FeeSettings
@@ -81,62 +87,117 @@ const emit = defineEmits<{ reset: [] }>()
 .section {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
   box-shadow: var(--shadow-card);
 }
 
 .section-title {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin: 0 0 0.9rem 0;
+  letter-spacing: -0.01em;
 }
 
 .offsite-toggle {
   margin-bottom: 0.5rem;
 }
 
-.checkbox-label {
+/* macOS-style switch */
+.switch-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  gap: 1rem;
   cursor: pointer;
+}
+
+.switch-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.switch-title {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-primary);
 }
 
-.checkbox-label input[type='checkbox'] {
-  width: 1rem;
-  height: 1rem;
-  accent-color: var(--accent);
-}
-
-.offsite-hint {
-  display: block;
+.switch-hint {
   font-size: 0.78rem;
   color: var(--text-muted);
-  margin-top: 0.25rem;
-  margin-left: 1.5rem;
+}
+
+.switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 26px;
+}
+
+.switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switch-track {
+  position: absolute;
+  inset: 0;
+  background: var(--border-strong);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.switch input:checked ~ .switch-track {
+  background: #34c759;
+}
+
+.switch input:checked ~ .switch-thumb {
+  transform: translateX(18px);
+}
+
+.switch input:focus-visible ~ .switch-track {
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .reset-btn {
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1.1rem;
   font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-secondary);
   cursor: pointer;
   align-self: flex-start;
-  transition: all 0.15s;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
 }
 
 .reset-btn:hover {
-  border-color: var(--text-secondary);
+  background: var(--bg-subtle);
+  border-color: var(--text-muted);
   color: var(--text-primary);
 }
 </style>

@@ -103,16 +103,17 @@ const isOpen = ref(false)
 }
 
 .collapsible-content.panel-subtle {
-  padding: 0.75rem;
+  padding: 0.85rem;
   background: var(--bg-subtle);
-  border-radius: 6px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
 }
 
 .collapsible-content.panel-card {
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.4rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;

@@ -144,10 +144,11 @@ import CollapsibleSection from './CollapsibleSection.vue'
 
 <style scoped>
 .topic h4 {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--text-primary);
   margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
 }
 
 .topic p {

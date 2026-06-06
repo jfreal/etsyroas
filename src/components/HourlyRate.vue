@@ -56,18 +56,17 @@ defineProps<{
 .hourly-rate {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
   box-shadow: var(--shadow-card);
 }
 
 .hourly-title {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin: 0 0 0.9rem 0;
+  letter-spacing: -0.01em;
 }
 
 .calc-steps {
@@ -114,8 +113,8 @@ defineProps<{
 
 .rate-display {
   text-align: center;
-  padding: 0.75rem;
-  border-radius: 6px;
+  padding: 1rem;
+  border-radius: var(--radius-md);
   background: var(--bg-subtle);
 }
 

@@ -54,10 +54,11 @@ const label = computed(() => (isDark.value ? 'Switch to light mode' : 'Switch to
   width: 2.25rem;
   height: 2.25rem;
   flex-shrink: 0;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
   background: var(--bg-card);
   color: var(--text-secondary);
+  box-shadow: var(--shadow-card);
   cursor: pointer;
   transition:
     color 0.15s,
