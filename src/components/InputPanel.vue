@@ -161,14 +161,14 @@ const emit = defineEmits<{ reset: [] }>()
   left: 3px;
   width: 20px;
   height: 20px;
-  background: #fff;
+  background: var(--switch-thumb);
   border-radius: 50%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease;
 }
 
 .switch input:checked ~ .switch-track {
-  background: #34c759;
+  background: var(--switch-on);
 }
 
 .switch input:checked ~ .switch-thumb {
