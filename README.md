@@ -22,6 +22,21 @@ numbers between visits.
 
 ---
 
+## Why I built this
+
+I run a small Etsy shop — [ordoupcyclum](https://ordoupcyclum.etsy.com/) — and every time I turned
+on Etsy Ads I had the same nagging question: _am I actually making money?_ Etsy's ROAS number alone
+won't tell you; the real answer only shows up once you subtract every fee, your own per-item costs,
+taxes, and the time you spend making and packing each order.
+
+The calculators I could find were either clunky to use or missing the inputs that actually mattered
+to me — my materials and shipping costs, my processing time, the Offsite Ads fee. None of them gave
+me a straight answer, so I built the one I wanted: every input in one tidy place, and an instant
+verdict on whether an order is profitable, breaking even, or quietly losing money. I use it on my
+own shop, and figured other sellers might find it handy too.
+
+---
+
 ## Features
 
 - **Instant verdict** — a clear _Profitable / Breaking Even / Losing Money_ banner with profit per
