@@ -164,6 +164,32 @@ body {
   gap: 0.85rem;
 }
 
+/* --- Footer --- */
+.app-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.app-footer p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 56ch;
+  margin: 0 auto;
+}
+
+.app-footer a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 520px) {
   .app {
     padding: 1.5rem 1rem 3rem;

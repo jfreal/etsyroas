@@ -114,5 +114,15 @@ const calc = useCalculator()
     </div>
 
     <HowItWorks />
+
+    <footer class="app-footer">
+      <p>
+        I built this to calculate the profitability of my own Etsy shop,
+        <a href="https://ordoupcyclum.etsy.com/" target="_blank" rel="noopener noreferrer"
+          >ordoupcyclum</a
+        >. The other calculators I found were much harder to use and didn't have all the inputs I
+        wanted.
+      </p>
+    </footer>
   </div>
 </template>
