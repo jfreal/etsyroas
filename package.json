@@ -1,31 +1,60 @@
 {
   "name": "etsyroas",
   "version": "1.0.0",
-  "description": "Etsy Ads Profitability Calculator",
+  "description": "A privacy-friendly calculator that tells Etsy sellers whether their Etsy Ads are actually profitable after every fee, cost, tax, and the value of their time.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jfreal/etsyroas.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "etsy",
+    "etsy-ads",
+    "roas",
+    "calculator",
+    "ecommerce",
+    "profitability",
+    "vue",
+    "vite",
+    "typescript"
+  ],
+  "author": "John Farrell <john.e.farrell@gmail.com>",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/jfreal/etsyroas/issues"
   },
-  "homepage": "https://github.com/jfreal/etsyroas#readme",
+  "homepage": "https://etsyroas.netlify.app",
   "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/space-grotesk": "^5.2.10",
     "vue": "^3.5.28"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.4",
+    "@vitest/coverage-v8": "^4.1.8",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.8.0",
+    "@vue/test-utils": "^2.4.11",
+    "eslint": "^10.4.1",
+    "eslint-plugin-vue": "^10.9.2",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.8.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
+    "vitest": "^4.1.8",
     "vue-tsc": "^3.2.4"
   }
 }

@@ -21,11 +21,18 @@ defineProps<{
       </div>
       <div class="step">
         <span class="step-label">Tax ({{ formatPercent(taxRate) }})</span>
-        <span class="step-value negative">-{{ formatCurrency(profitPerUnit > 0 ? profitPerUnit - profitAfterTaxPerUnit : 0) }}</span>
+        <span class="step-value negative"
+          >-{{
+            formatCurrency(profitPerUnit > 0 ? profitPerUnit - profitAfterTaxPerUnit : 0)
+          }}</span
+        >
       </div>
       <div class="step after-tax">
         <span class="step-label">After Tax</span>
-        <span class="step-value" :class="{ positive: profitAfterTaxPerUnit > 0, loss: profitAfterTaxPerUnit < 0 }">
+        <span
+          class="step-value"
+          :class="{ positive: profitAfterTaxPerUnit > 0, loss: profitAfterTaxPerUnit < 0 }"
+        >
           {{ formatCurrency(profitAfterTaxPerUnit) }}
         </span>
       </div>
@@ -35,7 +42,10 @@ defineProps<{
       </div>
     </div>
 
-    <div class="rate-display" :class="{ positive: effectiveHourlyRate > 0, loss: effectiveHourlyRate < 0 }">
+    <div
+      class="rate-display"
+      :class="{ positive: effectiveHourlyRate > 0, loss: effectiveHourlyRate < 0 }"
+    >
       <span class="rate-amount">{{ formatCurrency(effectiveHourlyRate) }}</span>
       <span class="rate-label">per hour</span>
     </div>
@@ -46,17 +56,17 @@ defineProps<{
 .hourly-rate {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
 }
 
 .hourly-title {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin: 0 0 0.9rem 0;
+  letter-spacing: -0.01em;
 }
 
 .calc-steps {
@@ -103,8 +113,8 @@ defineProps<{
 
 .rate-display {
   text-align: center;
-  padding: 0.75rem;
-  border-radius: 6px;
+  padding: 1rem;
+  border-radius: var(--radius-md);
   background: var(--bg-subtle);
 }
 

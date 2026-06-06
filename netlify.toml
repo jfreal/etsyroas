@@ -1,0 +1,16 @@
+# Netlify deployment configuration.
+# Connect the repo at https://app.netlify.com and these settings are picked up
+# automatically — no manual build config needed in the dashboard.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Single-page app: serve index.html for any path so deep links don't 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

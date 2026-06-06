@@ -64,7 +64,10 @@ defineProps<{
         <span class="stat-label">Ad Spend</span>
         <span class="stat-value negative">-{{ formatCurrency(monthlyAdSpend) }}</span>
       </div>
-      <div class="stat profit-stat" :class="{ positive: monthlyProfit > 0, loss: monthlyProfit < 0 }">
+      <div
+        class="stat profit-stat"
+        :class="{ positive: monthlyProfit > 0, loss: monthlyProfit < 0 }"
+      >
         <span class="stat-label">Profit</span>
         <span class="stat-value">{{ formatCurrency(monthlyProfit) }}</span>
       </div>
@@ -76,17 +79,17 @@ defineProps<{
 .summary {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
 }
 
 .summary-title {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  margin: 0 0 0.9rem 0;
+  letter-spacing: -0.01em;
 }
 
 .monthly-title {

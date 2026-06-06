@@ -1,9 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Apply the saved/system theme before first paint to avoid a flash. -->
+    <script>
+      ;(function () {
+        try {
+          var t = localStorage.getItem('etsyroas_theme')
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          }
+          document.documentElement.setAttribute('data-theme', t)
+        } catch (e) {}
+      })()
+    </script>
+
     <title>Etsy Ads Profitability Calculator</title>
+    <meta
+      name="description"
+      content="A free, privacy-friendly calculator that shows whether your Etsy Ads are actually profitable after every Etsy fee, your costs, taxes, and the value of your time. Runs entirely in your browser."
+    />
+
+    <meta name="theme-color" content="#f3ecdf" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph / social cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Etsy Ads Profitability Calculator" />
+    <meta
+      property="og:description"
+      content="See if your Etsy Ads are actually profitable after fees, costs, taxes, and your time — including your break-even ROAS and effective hourly rate."
+    />
+    <meta property="og:url" content="https://etsyroas.netlify.app" />
+    <meta property="og:image" content="https://etsyroas.netlify.app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Etsy Ads Profitability Calculator" />
+    <meta
+      name="twitter:description"
+      content="See if your Etsy Ads are actually profitable after fees, costs, taxes, and your time."
+    />
+    <meta name="twitter:image" content="https://etsyroas.netlify.app/og-image.png" />
   </head>
   <body>
     <div id="app"></div>

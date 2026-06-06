@@ -27,15 +27,9 @@ const isViable = computed(() => isFinite(props.breakEvenRoas))
         <span class="roas-value breakeven">{{ formatRoas(breakEvenRoas) }}</span>
       </div>
       <div class="roas-message" :class="{ above: isAbove, below: isBelow }">
-        <template v-if="isAbove">
-          {{ formatRoas(Math.abs(diff)) }} above break-even
-        </template>
-        <template v-else-if="isBelow">
-          {{ formatRoas(Math.abs(diff)) }} below break-even
-        </template>
-        <template v-else>
-          At break-even
-        </template>
+        <template v-if="isAbove"> {{ formatRoas(Math.abs(diff)) }} above break-even </template>
+        <template v-else-if="isBelow"> {{ formatRoas(Math.abs(diff)) }} below break-even </template>
+        <template v-else> At break-even </template>
       </div>
     </div>
 
@@ -49,17 +43,17 @@ const isViable = computed(() => isFinite(props.breakEvenRoas))
 .break-even {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-card);
 }
 
 .break-even-title {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent);
-  margin: 0 0 0.75rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  margin: 0 0 0.9rem 0;
+  letter-spacing: -0.01em;
 }
 
 .comparison {
@@ -96,8 +90,8 @@ const isViable = computed(() => isFinite(props.breakEvenRoas))
   text-align: center;
   font-size: 0.88rem;
   font-weight: 600;
-  padding: 0.4rem;
-  border-radius: 4px;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
   margin-top: 0.25rem;
 }
 

@@ -2,20 +2,22 @@
 import { computed } from 'vue'
 import { formatCurrency, formatPercent } from '../composables/useFormatters'
 
+type Verdict = 'profitable' | 'losing' | 'breakeven'
+
 const props = defineProps<{
-  verdict: 'profitable' | 'losing' | 'breakeven'
+  verdict: Verdict
   profitPerUnit: number
   profitMarginPercent: number
   effectiveHourlyRate: number
 }>()
 
-const label = computed(() => {
-  switch (props.verdict) {
-    case 'profitable': return 'Profitable'
-    case 'losing': return 'Losing Money'
-    case 'breakeven': return 'Breaking Even'
-  }
-})
+const LABELS: Record<Verdict, string> = {
+  profitable: 'Profitable',
+  losing: 'Losing Money',
+  breakeven: 'Breaking Even',
+}
+
+const label = computed(() => LABELS[props.verdict])
 </script>
 
 <template>
@@ -31,44 +33,45 @@ const label = computed(() => {
 
 <style scoped>
 .verdict-banner {
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.4rem;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s;
-  border-top: 3px solid transparent;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  box-shadow: var(--shadow-card);
 }
 
 .verdict-banner.profitable {
   background: var(--green-bg);
   color: var(--green-text);
-  border-top-color: var(--green-text);
 }
 
 .verdict-banner.losing {
   background: var(--red-bg);
   color: var(--red-text);
-  border-top-color: var(--red-text);
 }
 
 .verdict-banner.breakeven {
   background: var(--yellow-bg);
   color: var(--yellow-text);
-  border-top-color: var(--yellow-text);
 }
 
 .verdict-label {
+  font-family: var(--font-display);
   font-size: 1.3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .verdict-details {
-  margin-top: 0.35rem;
-  font-size: 1rem;
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
   font-weight: 500;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0.5rem 1.4rem;
 }
 </style>
