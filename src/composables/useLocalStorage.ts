@@ -46,12 +46,16 @@ export function useLocalStorage<T>(key: string, defaultValue: T): Ref<T> {
 
 /** Remove every value this app has written, leaving other apps' keys intact. */
 export function clearAllStorage(): void {
-  const keys: string[] = []
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i)
-    if (key?.startsWith(STORAGE_PREFIX)) {
-      keys.push(key)
+  try {
+    const keys: string[] = []
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      if (key?.startsWith(STORAGE_PREFIX)) {
+        keys.push(key)
+      }
     }
+    keys.forEach((k) => localStorage.removeItem(k))
+  } catch {
+    // Storage unavailable (e.g. strict privacy mode) — nothing to clear.
   }
-  keys.forEach((k) => localStorage.removeItem(k))
 }

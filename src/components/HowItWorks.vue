@@ -95,8 +95,9 @@ import CollapsibleSection from './CollapsibleSection.vue'
       <h4>Ad Cost Per Unit</h4>
       <p>
         Since ROAS = Revenue / Ad Spend, we can figure out how much ad money it cost to sell one
-        item: <strong>Ad Cost = Sale Price / ROAS</strong>. For a $25 item at 2.0x ROAS, you spent
-        $12.50 in ads to make that sale.
+        item: <strong>Ad Cost = Revenue / ROAS</strong>, where revenue is your sale price plus any
+        shipping you charge the buyer. For a $25 item at 2.0x ROAS, you spent $12.50 in ads to make
+        that sale.
       </p>
     </div>
 
