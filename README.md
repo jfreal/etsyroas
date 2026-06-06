@@ -110,7 +110,9 @@ effectiveHourlyRate  = afterTaxProfit ÷ processingMinutes × 60
   and component tests
 - **[ESLint](https://eslint.org/)** (flat config) + **[Prettier](https://prettier.io/)**
 - **GitHub Actions** CI and **Netlify** for hosting
-- **Zero runtime dependencies** beyond Vue — state is plain reactive refs persisted to
+- **Self-hosted fonts** — Inter + Space Grotesk (variable) via `@fontsource`, bundled at build time
+  so there are no Google Fonts / CDN requests
+- **Lean runtime** — just Vue and the bundled fonts; state is plain reactive refs persisted to
   `localStorage`
 
 ## Getting started

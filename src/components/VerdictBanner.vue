@@ -59,8 +59,9 @@ const label = computed(() => LABELS[props.verdict])
 }
 
 .verdict-label {
+  font-family: var(--font-display);
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.015em;
 }
 
