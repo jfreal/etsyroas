@@ -21,11 +21,18 @@ defineProps<{
       </div>
       <div class="step">
         <span class="step-label">Tax ({{ formatPercent(taxRate) }})</span>
-        <span class="step-value negative">-{{ formatCurrency(profitPerUnit > 0 ? profitPerUnit - profitAfterTaxPerUnit : 0) }}</span>
+        <span class="step-value negative"
+          >-{{
+            formatCurrency(profitPerUnit > 0 ? profitPerUnit - profitAfterTaxPerUnit : 0)
+          }}</span
+        >
       </div>
       <div class="step after-tax">
         <span class="step-label">After Tax</span>
-        <span class="step-value" :class="{ positive: profitAfterTaxPerUnit > 0, loss: profitAfterTaxPerUnit < 0 }">
+        <span
+          class="step-value"
+          :class="{ positive: profitAfterTaxPerUnit > 0, loss: profitAfterTaxPerUnit < 0 }"
+        >
           {{ formatCurrency(profitAfterTaxPerUnit) }}
         </span>
       </div>
@@ -35,7 +42,10 @@ defineProps<{
       </div>
     </div>
 
-    <div class="rate-display" :class="{ positive: effectiveHourlyRate > 0, loss: effectiveHourlyRate < 0 }">
+    <div
+      class="rate-display"
+      :class="{ positive: effectiveHourlyRate > 0, loss: effectiveHourlyRate < 0 }"
+    >
       <span class="rate-amount">{{ formatCurrency(effectiveHourlyRate) }}</span>
       <span class="rate-label">per hour</span>
     </div>
@@ -48,6 +58,7 @@ defineProps<{
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
+  box-shadow: var(--shadow-card);
 }
 
 .hourly-title {

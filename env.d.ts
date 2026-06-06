@@ -1,7 +1,4 @@
 /// <reference types="vite/client" />
 
-declare module '*.vue' {
-  import type { DefineComponent } from 'vue'
-  const component: DefineComponent<{}, {}, any>
-  export default component
-}
+// `.vue` single-file components are understood natively by vue-tsc / Volar,
+// so no `declare module '*.vue'` shim is needed here.

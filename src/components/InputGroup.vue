@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useId } from 'vue'
+
 defineProps<{
   label: string
   prefix?: string
@@ -8,15 +10,20 @@ defineProps<{
 }>()
 
 const model = defineModel<number>({ required: true })
+
+// Unique id so the <label> is programmatically tied to its <input>.
+const inputId = useId()
 </script>
 
 <template>
   <div class="input-group">
-    <label class="input-label">{{ label }}</label>
+    <label class="input-label" :for="inputId">{{ label }}</label>
     <div class="input-wrapper">
       <span v-if="prefix" class="input-adornment prefix">{{ prefix }}</span>
       <input
+        :id="inputId"
         type="number"
+        inputmode="decimal"
         v-model.number="model"
         :step="step ?? 0.01"
         :min="min ?? 0"

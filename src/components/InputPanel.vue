@@ -10,6 +10,7 @@ const shippingCost = defineModel<number>('shippingCost', { required: true })
 const otherCost = defineModel<number>('otherCost', { required: true })
 const processingMinutes = defineModel<number>('processingMinutes', { required: true })
 const taxRate = defineModel<number>('taxRate', { required: true })
+const unitsSoldPerDay = defineModel<number>('unitsSoldPerDay', { required: true })
 const listingFee = defineModel<number>('listingFee', { required: true })
 const transactionFeeRate = defineModel<number>('transactionFeeRate', { required: true })
 const paymentProcessingRate = defineModel<number>('paymentProcessingRate', { required: true })
@@ -36,9 +37,15 @@ const emit = defineEmits<{ reset: [] }>()
     </div>
 
     <div class="section">
-      <h3 class="section-title">Ads & Hourly Rate</h3>
+      <h3 class="section-title">Ads, Volume &amp; Time</h3>
       <InputGroup label="ROAS" suffix="x" v-model="roas" :step="0.1" />
-      <InputGroup label="Processing Time Per Item" suffix="min" v-model="processingMinutes" :step="1" />
+      <InputGroup label="Units Sold Per Day" v-model="unitsSoldPerDay" :step="1" />
+      <InputGroup
+        label="Processing Time Per Item"
+        suffix="min"
+        v-model="processingMinutes"
+        :step="1"
+      />
       <InputGroup label="Estimated Tax Rate" suffix="%" v-model="taxRate" :step="1" />
     </div>
 
@@ -60,9 +67,7 @@ const emit = defineEmits<{ reset: [] }>()
       />
     </div>
 
-    <button class="reset-btn" @click="emit('reset')" type="button">
-      Reset to Defaults
-    </button>
+    <button class="reset-btn" @click="emit('reset')" type="button">Reset to Defaults</button>
   </div>
 </template>
 
@@ -78,6 +83,7 @@ const emit = defineEmits<{ reset: [] }>()
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
+  box-shadow: var(--shadow-card);
 }
 
 .section-title {

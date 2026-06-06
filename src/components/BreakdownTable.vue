@@ -89,6 +89,7 @@ defineProps<{
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1rem;
+  box-shadow: var(--shadow-card);
 }
 
 .breakdown-title {

@@ -2,20 +2,22 @@
 import { computed } from 'vue'
 import { formatCurrency, formatPercent } from '../composables/useFormatters'
 
+type Verdict = 'profitable' | 'losing' | 'breakeven'
+
 const props = defineProps<{
-  verdict: 'profitable' | 'losing' | 'breakeven'
+  verdict: Verdict
   profitPerUnit: number
   profitMarginPercent: number
   effectiveHourlyRate: number
 }>()
 
-const label = computed(() => {
-  switch (props.verdict) {
-    case 'profitable': return 'Profitable'
-    case 'losing': return 'Losing Money'
-    case 'breakeven': return 'Breaking Even'
-  }
-})
+const LABELS: Record<Verdict, string> = {
+  profitable: 'Profitable',
+  losing: 'Losing Money',
+  breakeven: 'Breaking Even',
+}
+
+const label = computed(() => LABELS[props.verdict])
 </script>
 
 <template>
@@ -34,8 +36,11 @@ const label = computed(() => {
   border-radius: 8px;
   padding: 1rem 1.25rem;
   text-align: center;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   border-top: 3px solid transparent;
+  box-shadow: var(--shadow-card);
 }
 
 .verdict-banner.profitable {
